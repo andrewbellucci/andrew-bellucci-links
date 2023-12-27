@@ -1,0 +1,31 @@
+---
+import MoreIcon from "./icons/MoreIcon.astro";
+
+export interface Props {
+  Icon: any;
+  title: string;
+  description: string;
+  iconSize: {
+    width: number;
+    height: number;
+  }
+}
+
+const { title, Icon, description, iconSize } = Astro.props;
+---
+<li class="bg-white border dark:border-blue-light border-black/10 dark:bg-blue rounded-[12px] overflow-hidden">
+  <div class="dark:bg-blue border-b dark:border-blue-light pr-3 flex items-center justify-between">
+    <div class="flex items-center justify-start gap-5">
+      <div class="h-[50px] w-[50px] inline-flex items-center justify-center border-r dark:border-r-blue-light">
+        <Icon width={iconSize.width} height={iconSize.height} />
+      </div>
+      <h3 class="font-semibold text-sm top-px relative">{title}</h3>
+    </div>
+    <button class="h-[30px] w-[30px] inline-flex items-center justify-center rounded-lg">
+      <MoreIcon />
+    </button>
+  </div>
+  <div class="px-5 py-5">
+    <p class="text-sm text-blue-dark/80 dark:text-white/80">{description}</p>
+  </div>
+</li>

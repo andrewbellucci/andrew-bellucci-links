@@ -2,14 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import Logo from "../components/Logo.astro";
 import LinkListItem from "../components/LinkListItem.astro";
-import BelluDevelopmentIcon from '../components/BelluDevelopmentIcon.astro';
-import SneakerbaseIcon from '../components/SneakerbaseIcon.astro';
-import ProductizeIcon from '../components/ProductizeIcon.astro';
+import BelluDevelopmentIcon from '../components/icons/BelluDevelopmentIcon.astro';
+import DripDraftIcon from '../components/icons/DripDraftIcon.astro';
+import BordsyIcon from '../components/icons/BordsyIcon.astro';
+import XIcon from "../components/icons/XIcon.astro";
+import SneakerbaseIcon from "../components/icons/SneakerbaseIcon.astro";
+import PrompIcon from '../components/icons/PrompIcon.astro';
+import MarbleIcon from '../components/icons/MarbleIcon.astro';
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
+import GitHubIcon from "../components/icons/GitHubIcon.astro";
+import LinkListSocial from "../components/LinkListSocial.astro";
+import PastProjectListItem from "../components/PastProjectListItem.astro";
+import MailIcon from "../components/icons/MailIcon.astro";
+import EmploymentListItem from "../components/EmploymentListItem.astro";
 ---
 
-<Layout title="Andrew Bellucci's Links">
-	<header class="bg-white dark:bg-blue border-b dark:border-b-white/10 border-b-black/10">
-		<div class="max-w-[400px] mx-auto p-[30px]">
+<Layout title="Andrew Bellucci's Website">
+	<header class="bg-white dark:bg-blue border-b dark:border-b-blue-light border-b-black/10">
+		<div class="max-w-[1200px] mx-auto p-[30px]">
 			<Logo />
 			<h1 class="text-2xl font-bold text-blue-dark/80 dark:text-white/80 mt-[30px]">
 				Heyo, my name is<br />
@@ -17,27 +27,123 @@ import ProductizeIcon from '../components/ProductizeIcon.astro';
 			</h1>
 		</div>
 	</header>
-	<main class="max-w-[400px] mx-auto p-[30px]">
-		<h2 class="font-extrabold">Businesses</h2>
-		<ul>
-			<LinkListItem
-				href="https://www.belludevelopment.com/"
-				Icon={BelluDevelopmentIcon}
-				title="Bellu Development"
-				subTitle="Design & Development Agency"
-			/>
-			<LinkListItem
-				href="https://www.sneakerbase.io/"
-				Icon={SneakerbaseIcon}
-				title="Sneakerbase"
-				subTitle="Find the best priced Sneakers"
-			/>
-			<LinkListItem
-				href="https://www.tryproductize.com/"
-				Icon={ProductizeIcon}
-				title="Productize"
-				subTitle="Design & Dev as a Service"
-			/>
-		</ul>
+	<main class="flex mx-auto p-[30px] gap-[30px] max-w-[1200px]">
+		<div class="flex-1">
+			<section>
+				<div class="flex items-start justify-start gap-6 relative">
+					<div class="dark:bg-blue h-[30px] w-[30px] absolute -left-[15px] top-0 inline-flex items-center justify-center rounded-md bg-white border dark:border-blue-light">
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+					</div>
+					<div class="w-0.5 h-[50px] bg-black/10 dark:bg-blue-light" />
+					<h2 class="font-bold relative top-1">Employment</h2>
+				</div>
+				<ul>
+					<EmploymentListItem
+						company="ServiceCore"
+						timeline="8/2023 - Present"
+						position="Senior Software Engineer"
+						bullets={[
+							"Modernized outdated infrastructure to speed up build times and meet best practices of the respective app",
+							"Guided team on a significant overhaul of infrastructure as well as providing docs for onboarding"
+						]}
+					/>
+					<EmploymentListItem
+						company="Marble"
+						timeline="7/2022 - 3/2023"
+						position="Co-Founder, Developer, & COO"
+						bullets={[
+							"Worked with blockchain technologies to validate user identity and manage communities",
+							"Managed and provided guidance to the team, as well as connected us with large partners",
+							"Wireframe, Designed, and Developed intuitive and accessible User Interfaces for our infrastructure",
+						]}
+					/>
+					<EmploymentListItem
+						company="PureCars"
+						timeline="1/2022 - 9/2022"
+						position="Senior Frontend Engineer"
+						bullets={[
+							"Developed data-driven web application solutions with React.js for dealers all over the US",
+							"Find and implement solutions to problems brought up by our users",
+							"Design and develop extra features or functionalities to provide users with a great experience",
+						]}
+					/>
+					<EmploymentListItem
+						company="Xformics"
+						timeline="8/2021 - 1/2022"
+						position="Senior Consultant"
+						bullets={[
+							"Designed and developed custom software solutions ready for web-scale",
+							"Led a team of developers to build full-stack web applications with React.js and Nest.js",
+							"Used Angular 12 and Nest.js to create and maintain enterprise web apps",
+						]}
+					/>
+				</ul>
+			</section>
+			<section>
+				<div class="flex items-center justify-start gap-6 relative">
+					<div class="dark:bg-blue h-[30px] w-[30px] absolute -left-[15px] top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-md bg-white border dark:border-blue-light">
+						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-open"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
+					</div>
+					<div class="w-0.5 h-[100px] bg-gradient-to-b from-black/10 dark:from-blue-light via-black/10 dark:via-blue-light to-black/0 dark:to-blue-light/0" />
+					<h2 class="font-bold">Past Projects</h2>
+				</div>
+				<ul class="space-y-[15px]">
+					<PastProjectListItem
+						title="Promp"
+						description="Promp was an easy-to-use AI prompt marketplace. It’s the perfect platform for creatives and sellers to make some cash from their unique prompts without giving away it's valuable information. It provides a super user-friendly interface to build prompts, and utilize them without wasting a lick of time, making it a breeze for end-users."
+						Icon={PrompIcon}
+						iconSize={{ width: 20, height: 15 }}
+					/>
+					<PastProjectListItem
+						title="Marble"
+						description="Marble was a cool platform for managing your exclusive online community. It uses tokenization on the Ethereum blockchain. This means members get special tokens that give them exclusive access. It's like having a VIP pass to your favorite club. Plus, it's not just for online communities. We've included features for public and private events too."
+						Icon={MarbleIcon}
+						iconSize={{ width: 20, height: 20 }}
+					/>
+					<PastProjectListItem
+						title="Sneakerbase"
+						description="Sneakerbase was a comprehensive marketplace for sneaker enthusiasts and casual buyers alike. Its primary function is to enable users to discover a variety of new sneakers, compare market prices, and obtain suggestions for related sneaker styles."
+						Icon={SneakerbaseIcon}
+						iconSize={{ width: 20, height: 20 }}
+					/>
+				</ul>
+			</section>
+		</div>
+		<aside class="max-w-[400px] w-full space-y-[30px]">
+			<section>
+				<h2 class="font-bold mb-2">Connect with me</h2>
+				<ul class="flex items-center justify-start gap-4">
+					<LinkListSocial Icon={XIcon} href="https://x.com/andrewbellucci" />
+					<LinkListSocial Icon={LinkedInIcon} href="https://linkedin.com/in/bellu" />
+					<LinkListSocial Icon={GitHubIcon} href="https://github.com/andrewbellucci" />
+					<LinkListSocial Icon={MailIcon} href="mailto:andrew@bellu.dev" />
+				</ul>
+			</section>
+			<section>
+				<h2 class="font-bold mb-2">Businesses</h2>
+				<ul class="space-y-[15px]">
+					<LinkListItem
+						href="https://www.belludevelopment.com/"
+						Icon={BelluDevelopmentIcon}
+						title="Bellu Development"
+						subTitle="Design & Development Agency"
+					/>
+					<LinkListItem
+						href="https://www.bordsy.com/"
+						Icon={BordsyIcon}
+						title="Bordsy"
+						subTitle="Amplify your Freelance Business"
+						comingSoon
+					/>
+					<LinkListItem
+						href="https://www.dripdraft.com/"
+						Icon={DripDraftIcon}
+						title="DripDraft"
+						subTitle="Automate your Custom Apparel"
+						comingSoon
+					/>
+				</ul>
+			</section>
+		</aside>
 	</main>
 </Layout>

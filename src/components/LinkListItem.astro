@@ -4,19 +4,27 @@ export interface Props {
   subTitle: string;
   Icon: any;
   href: string;
+  comingSoon?: boolean;
 }
 
-const { title, subTitle, Icon, href } = Astro.props;
+const { title, subTitle, Icon, href, comingSoon } = Astro.props;
 ---
 
-<li class="mb-[15px] last:mb-0">
-  <a href={href} class="flex gap-[18px] bg-white border dark:border-0 border-black/10 dark:bg-blue rounded-[12px] overflow-hidden" target="_blank" rel="noreferrer noopener">
-    <span class="w-[70px] h-[70px] flex items-center justify-center dark:bg-blue-light border-r dark:border-r-0">
+<li>
+  <a href={href} class="flex gap-5 bg-white border dark:border-blue-light border-black/10 dark:bg-blue rounded-[12px] overflow-hidden" target="_blank" rel="noopener">
+    <div class="w-[70px] h-[70px] flex items-center justify-center border-r dark:border-r-blue-light">
       <Icon />
-    </span>
-    <span class="flex-1 flex flex-col text-sm justify-center">
-      <span class="font-bold">{title}</span>
+    </div>
+    <div class="flex-1 text-sm justify-center h-[70px] flex items-start flex-col">
+      <h3 class="font-semibold align-middle">
+        {title}
+        {comingSoon ? (
+          <span class="relative bottom-0.5 text-[10px] text-blue-dark/80 dark:text-white/80 ml-[5px] rounded-md bg-blue-dark/10 dark:bg-blue-light px-1 py-0.5 font-medium">
+            Coming Soon
+          </span>
+        ) : undefined}
+      </h3>
       <span class="text-blue-dark/80 dark:text-white/80">{subTitle}</span>
-    </span>
+    </div>
   </a>
 </li>

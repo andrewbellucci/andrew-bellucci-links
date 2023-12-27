@@ -1,0 +1,23 @@
+---
+export interface Props {
+  width?: number;
+  height?: number;
+}
+
+const { height = 30, width = 30 } = Astro.props;
+---
+
+
+<svg width={width} height={height} viewBox="0 0 25 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="12.5" cy="13" r="12.5" fill="url(#paint0_radial_81_1611)" class="dark:fill-[url(#lightness)] fill-[url(#darkness)]" />
+  <defs>
+    <radialGradient id="lightness" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(9 9) rotate(46.1233) scale(18.0347)" class="stop-color-dark-blue dark:stop-color-white">
+      <stop stop-color="white" />
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+      <radialGradient id="darkness" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(9 9) rotate(46.1233) scale(18.0347)" class="stop-color-dark-blue dark:stop-color-white">
+          <stop stop-color="#16191E" />
+          <stop offset="1" stop-color="#16191E" stop-opacity="0"/>
+      </radialGradient>
+  </defs>
+</svg>

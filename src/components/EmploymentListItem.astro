@@ -1,0 +1,35 @@
+---
+export interface Props {
+  company: string;
+  position: string;
+  timeline: string;
+  bullets: string[];
+}
+
+const { company, position, timeline, bullets } = Astro.props;
+---
+
+<li class="relative pt-1.5 pb-[9px] pl-6 pr-0 border-l-2 border-l-black/10 dark:border-l-blue-light">
+  <div class="dark:bg-blue h-[15px] w-[15px] absolute -left-2 top-[18px] inline-flex items-center justify-center rounded-full bg-white border dark:border-blue-light">
+    <div class="bg-blue dark:bg-white-off h-1.5 w-1.5 rounded-full border border-white/5" />
+  </div>
+  <div class="w-4 h-0.5 bg-gradient-to-r dark:from-blue-light dark:to-blue-light/0 from-black/10 to-black/0 absolute left-[7px] top-[25px]" />
+  <div class="bg-white border dark:border-blue-light border-black/10 dark:bg-blue rounded-[12px] overflow-hidden">
+    <div class="dark:bg-blue border-b dark:border-blue-light px-5 py-2 flex items-center justify-between">
+      <div class="flex items-center justify-start gap-0.5">
+        <h3 class="font-semibold text-sm top-px relative">{company}</h3>
+        <span class="relative text-[10px] text-blue-dark/80 dark:text-white/80 ml-[5px] rounded-md bg-blue-dark/10 dark:bg-blue-light px-1 py-0.5">
+          {position}
+        </span>
+      </div>
+      <span class="text-xs relative top-px text-[10px] text-blue-dark/80 dark:text-white/80">{timeline}</span>
+    </div>
+    <div class="p-5">
+      <ul class="list-disc pl-3 space-y-1">
+        {bullets.map(bullet => (
+          <li class="text-sm text-blue-dark/80 dark:text-white/80">{bullet}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</li>
