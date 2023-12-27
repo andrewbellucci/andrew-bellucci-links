@@ -27,7 +27,7 @@ import EmploymentListItem from "../components/EmploymentListItem.astro";
 			</h1>
 		</div>
 	</header>
-	<main class="flex mx-auto p-[30px] gap-[30px] max-w-[1200px]">
+	<main class="flex mx-auto p-[30px] gap-[30px] max-w-[1200px] flex-col-reverse lg:flex-row">
 		<div class="flex-1">
 			<section>
 				<div class="flex items-start justify-start gap-6 relative">
@@ -77,6 +77,17 @@ import EmploymentListItem from "../components/EmploymentListItem.astro";
 							"Used Angular 12 and Nest.js to create and maintain enterprise web apps",
 						]}
 					/>
+					<EmploymentListItem
+						company="Bellu Development"
+						timeline="1/2015 - Present"
+						position="Software Development & Design"
+						bullets={[
+							"Build custom software solutions suitable for small businesses or enterprise-level companies",
+							"Design and build clean user interfaces/experiences with Figma, React.js, and Node.js",
+							"Build seamless mobile applications with React Native",
+							"Customer Relations and Networking",
+						]}
+					/>
 				</ul>
 			</section>
 			<section>
@@ -109,7 +120,7 @@ import EmploymentListItem from "../components/EmploymentListItem.astro";
 				</ul>
 			</section>
 		</div>
-		<aside class="max-w-[400px] w-full space-y-[30px]">
+		<aside class="lg:max-w-[400px] w-full space-y-[30px]">
 			<section>
 				<h2 class="font-bold mb-2">Connect with me</h2>
 				<ul class="flex items-center justify-start gap-4">
