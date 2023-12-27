@@ -1,6 +1,4 @@
 ---
-import MoreIcon from "./icons/MoreIcon.astro";
-
 export interface Props {
   Icon: any;
   title: string;
@@ -9,9 +7,10 @@ export interface Props {
     width: number;
     height: number;
   }
+  techDetails: string[];
 }
 
-const { title, Icon, description, iconSize } = Astro.props;
+const { title, Icon, description, iconSize, techDetails } = Astro.props;
 ---
 <li class="bg-white border dark:border-blue-light border-black/10 dark:bg-blue rounded-[12px] overflow-hidden">
   <div class="dark:bg-blue border-b dark:border-blue-light pr-3 flex items-center justify-between">
@@ -21,11 +20,14 @@ const { title, Icon, description, iconSize } = Astro.props;
       </div>
       <h3 class="font-semibold text-sm top-px relative">{title}</h3>
     </div>
-    <button class="h-[30px] w-[30px] inline-flex items-center justify-center rounded-lg">
-      <MoreIcon />
-    </button>
   </div>
   <div class="px-5 py-5">
     <p class="text-sm text-blue-dark/80 dark:text-white/80">{description}</p>
+  </div>
+  <div class="dark:bg-blue-light p-5 bg-white border-t dark:border-blue border-black/10">
+    <h4 class="mb-1.5 font-semibold text-xs top-px relative">Tech Details</h4>
+    {techDetails.map((detail) => (
+      <p class="text-xs text-blue-dark/80 dark:text-white/80 mb-1.5 last:mb-0">{detail}</p>
+    ))}
   </div>
 </li>
