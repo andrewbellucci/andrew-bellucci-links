@@ -16,9 +16,9 @@ const { company, position, timeline, bullets } = Astro.props;
   <div class="w-4 h-0.5 bg-gradient-to-r dark:from-blue-light dark:to-blue-light/0 from-black/10 to-black/0 absolute left-[7px] top-[25px]" />
   <div class="bg-white border dark:border-blue-light border-black/10 dark:bg-blue rounded-[12px] overflow-hidden">
     <div class="dark:bg-blue border-b dark:border-blue-light px-5 py-2 flex items-center justify-between">
-      <div class="flex items-center justify-start gap-0.5">
+      <div class="flex md:items-center justify-start gap-1.5 flex-col md:flex-row">
         <h3 class="font-semibold text-sm top-px relative">{company}</h3>
-        <span class="relative text-[10px] text-blue-dark/80 dark:text-white/80 ml-[5px] rounded-md bg-blue-dark/10 dark:bg-blue-light px-1 py-0.5">
+        <span class="relative text-[10px] text-blue-dark/80 dark:text-white/80 rounded-md bg-blue-dark/10 dark:bg-blue-light px-1 py-0.5">
           {position}
         </span>
       </div>
