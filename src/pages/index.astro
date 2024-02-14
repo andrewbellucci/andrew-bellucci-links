@@ -6,13 +6,10 @@ import BelluDevelopmentIcon from '../components/icons/BelluDevelopmentIcon.astro
 import DripDraftIcon from '../components/icons/DripDraftIcon.astro';
 import BordsyIcon from '../components/icons/BordsyIcon.astro';
 import XIcon from "../components/icons/XIcon.astro";
-import SneakerbaseIcon from "../components/icons/SneakerbaseIcon.astro";
-import PrompIcon from '../components/icons/PrompIcon.astro';
-import MarbleIcon from '../components/icons/MarbleIcon.astro';
 import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import GitHubIcon from "../components/icons/GitHubIcon.astro";
 import LinkListSocial from "../components/LinkListSocial.astro";
-import PastProjectListItem from "../components/PastProjectListItem.astro";
+import PastProjectList from "../components/PastProjectsList.tsx";
 import MailIcon from "../components/icons/MailIcon.astro";
 import EmploymentListItem from "../components/EmploymentListItem.astro";
 import SkillPillListItem from "../components/SkillPillListItem.astro";
@@ -41,7 +38,7 @@ import SkillPillListItem from "../components/SkillPillListItem.astro";
 				<ul>
 					<EmploymentListItem
 						company="ServiceCore"
-						timeline="8/2023 - Present"
+						timeline="8/2023 - 12/2023"
 						position="Senior Software Engineer"
 						bullets={[
 							"Modernized outdated React.js + Node.js serverless architecture to speed up build times and meet best practices of the dashboard application",
@@ -110,40 +107,7 @@ import SkillPillListItem from "../components/SkillPillListItem.astro";
 					<div class="w-0.5 h-[100px] bg-gradient-to-b from-black/10 dark:from-blue-light via-black/10 dark:via-blue-light to-black/0 dark:to-blue-light/0" />
 					<h2 class="font-bold">Past Projects</h2>
 				</div>
-				<ul class="space-y-[15px]">
-					<PastProjectListItem
-						title="Promp"
-						description="Promp was an easy-to-use AI prompt marketplace. It’s the perfect platform for creatives and sellers to make some cash from their unique prompts without giving away it's valuable information. It provides a super user-friendly interface to build prompts, and utilize them without wasting a lick of time, making it a breeze for end-users."
-						Icon={PrompIcon}
-						iconSize={{ width: 20, height: 15 }}
-						techDetails={[
-							"I used Amazon Web Services for setting everything up and making sure it runs without any hiccups. To handle the communication between server and client, we're using something called tRPC. All of this is written in TypeScript and MySQL to ensure a solid and secure performance.",
-							"The visible portions of the platform are built using React and Next.js. These two help make the platform super fast and always up-to-date. The search engine was based on Typesense, which gave us a reliable search.",
-							"To wrap things up in a pretty package, I used Tailwind CSS, which allowed me to scale the designs across multiple components without naming conflicts or coming up with naming conventions. It also helped me keep the bundle size of the styles down, which is also a plus.",
-						]}
-					/>
-					<PastProjectListItem
-						title="Marble"
-						description="Marble was a cool platform for managing your exclusive online community. It uses tokenization on the Ethereum blockchain. This means members get special tokens that give them exclusive access. It's like having a VIP pass to your favorite club. Plus, it's not just for online communities. We've included features for public and private events too."
-						Icon={MarbleIcon}
-						iconSize={{ width: 20, height: 20 }}
-						techDetails={[
-							"Ethereum and Solidity are used at the heart for the whole tokenization process, letting you manage the access to your digital communities with ease.",
-							"AWS had everything hosted and running smoothly, while Golang on the gin framework handle the many interconnecting parts of the project, keeping everything in our microservice architecture fast and reliable.",
-							"Just like some of my other projects, Marble uses TypeScript, React, Next.js, Tailwind CSS for styling, and MySQL on the backend of the webapp.",
-						]}
-					/>
-					<PastProjectListItem
-						title="Sneakerbase"
-						description="Sneakerbase was a comprehensive marketplace for sneaker enthusiasts and casual buyers alike. Its primary function is to enable users to discover a variety of new sneakers, compare market prices, and obtain suggestions for related sneaker styles."
-						Icon={SneakerbaseIcon}
-						iconSize={{ width: 20, height: 20 }}
-						techDetails={[
-							"Built on a microservices architecture using Node.js, the project used a REST API based on Fastify, along with a versatile cron scheduler that manages different tasks such as sneaker discovery, image processing, price scraping, and daily sneaker selections. Service communication is handled by Redis. The backend of the application is powered by MySQL and is written in TypeScript to ensure a robust and scalable product. The search functionality is based on Typesense, which allowed me to create an almost instant search experience.",
-							"React and Next.js were used on the frontend to facilitate Server Side Generation (SSG) for rapid page loading, Server Side Rendering (SSR), and Incremental Static Regeneration (ISR), all offering rapid loading experiences. The UI is styled with Tailwind CSS, which allowed me to easily create a lightweight and scalable frontend.",
-						]}
-					/>
-				</ul>
+				<PastProjectList client:load />
 			</section>
 		</div>
 		<aside class="lg:max-w-[400px] w-full space-y-[30px]">
