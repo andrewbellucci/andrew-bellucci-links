@@ -1,0 +1,10 @@
+
+
+/*.page-break-after {*/
+/*    page-break-after: always;*/
+/*}*/
+@media print {
+    div {
+        break-inside: avoid;
+    }
+}

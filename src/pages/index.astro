@@ -27,7 +27,7 @@ import SkillPillListItem from "../components/SkillPillListItem.astro";
 	</header>
 	<main class="flex mx-auto p-[30px] gap-[30px] max-w-[1200px] flex-col-reverse lg:flex-row">
 		<div class="flex-1">
-			<section>
+			<section class="page-break-after">
 				<div class="flex items-start justify-start gap-6 relative">
 					<div class="dark:bg-blue h-[30px] w-[30px] absolute -left-[15px] top-0 inline-flex items-center justify-center rounded-md bg-white border dark:border-blue-light">
 						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
@@ -36,6 +36,17 @@ import SkillPillListItem from "../components/SkillPillListItem.astro";
 					<h2 class="font-bold relative top-1">Employment</h2>
 				</div>
 				<ul>
+					<EmploymentListItem
+						company="Xformics"
+						timeline="3/2023 - Present"
+						position="Lead Consultant"
+						bullets={[
+							"Leading a team of developers to build custom AI-powered software solutions",
+							"Architected and developed a scalable, configurable, and user-friendly interface for interacting with AI-powered backend services",
+							"Built out and maintaining React Native loyalty based applications for consumers",
+							"Reconstructing and modernizing outdated React applications to improve performance and maintainability",
+						]}
+					/>
 					<EmploymentListItem
 						company="ServiceCore"
 						timeline="8/2023 - 12/2023"
@@ -99,7 +110,7 @@ import SkillPillListItem from "../components/SkillPillListItem.astro";
 					/>
 				</ul>
 			</section>
-			<section>
+			<section class="page-break-after">
 				<div class="flex items-center justify-start gap-6 relative">
 					<div class="dark:bg-blue h-[30px] w-[30px] absolute -left-[15px] top-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-md bg-white border dark:border-blue-light">
 						<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-open"><path d="m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2"/></svg>
